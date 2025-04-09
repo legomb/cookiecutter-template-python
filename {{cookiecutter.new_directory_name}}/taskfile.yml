@@ -1,0 +1,44 @@
+version: '3'
+
+dotenv: ['.env', '{{.ENV}}/.env.', '{{.HOME}}/.env']
+
+tasks:
+  default:
+    desc: List tasks (default)
+    cmds:
+      - cmd: task -l
+        silent: true
+
+  devbox:update:
+    desc: Update the devbox lock file
+    cmds:
+      - devbox update
+
+  devbox:devcontainer:generate:
+    desc: Generates a vscode devcontainer based on the devbox config
+    cmds:
+      - devbox generate devcontainer
+
+  uv:project:init:
+    desc: Initializes project
+    cmds:
+      - uv init {{cookiecutter.new_directory_name}}
+
+  uv:project:dependencies:add:
+    desc: Add dependencies
+    dir: {{cookiecutter.new_directory_name}}
+    cmds:
+      - uv add black sqlfluff pre-commit nbstripout
+      # - uv pip install black sqlfluff pre-commit nbstripout
+
+  project:run:
+    desc: Run project
+    dir: {{cookiecutter.new_directory_name}}
+    cmds:
+      - uv run main.py
+
+  project:test:
+    desc: Test the project
+    dir: {{cookiecutter.new_directory_name}}
+    cmds:
+      - uv run pytest

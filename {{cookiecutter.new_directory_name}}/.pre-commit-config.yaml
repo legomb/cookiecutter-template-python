@@ -1,0 +1,27 @@
+repos:
+  - repo: local
+    hooks:
+      - id: nbstripout
+        name: nbstripout
+        description: "nbstripout: strip output from Jupyter and IPython notebooks"
+        entry: nbstripout
+        language: system
+        types: [jupyter]
+      - id: black
+        name: Black
+        language: system
+        entry: black
+        types: [python]
+        files: .*
+      - id: prettier
+        name: Prettier
+        language: system
+        entry: prettier
+        types_or: [yaml, json, markdown]
+        files: .*
+      - id: sqlfluff
+        name: SQLFluff
+        language: system
+        entry: sqlfluff fix --show-lint-violations --force
+        types: [sql]
+        files: .*

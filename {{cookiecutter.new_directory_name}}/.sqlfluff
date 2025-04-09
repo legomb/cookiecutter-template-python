@@ -1,0 +1,26 @@
+[sqlfluff]
+templater = jinja
+dialect = snowflake
+
+# L026: this rule enforces to use source() for every table reference.
+# L031: this rule enforces to avoid aliases in from clauses and join conditions.
+# L057: this rule enforces not using special charachters in identifiers (like space).
+exclude_rules = L026,L031, L057
+
+[sqlfluff:templater:jinja]
+apply_dbt_builtins = True
+
+[sqlfluff:templater:jinja:macros]
+dbt_utils_surrogate_key = {% macro dbt_utils_surrogate_key(n) %}{{ n }}{% endmacro %}
+
+[sqlfluff:rules:L010]  # Keywords
+capitalisation_policy = upper
+
+[sqlfluff:rules:L014]  # Unquoted identifiers
+extended_capitalisation_policy = upper
+
+[sqlfluff:rules:L030]  # Function names
+capitalisation_policy = upper
+
+[sqlfluff:rules:L040]  # Null & Boolean Literals
+capitalisation_policy = upper
