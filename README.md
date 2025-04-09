@@ -2,23 +2,22 @@
 
 This template includes everything you need to start a new Python project:
 
-- devbox
-- direnv
-- taskfile
-- python
-- uv
-- black
-- prettier
-- sqlfluff
-- pre-commit
-- nbstripout
-- devcontainer
+- [devbox](https://www.jetify.com/devbox)
+- [direnv](https://direnv.net/)
+- [taskfile](https://taskfile.dev/)
+- [Python](https://www.python.org/)
+- [uv](https://docs.astral.sh/uv/)
+- [Black](https://github.com/psf/black)
+- [Prettier](https://prettier.io/)
+- [SQLFluff](https://sqlfluff.com/)
+- [pre-commit](https://pre-commit.com/)
+- [nbstripout](https://github.com/kynan/nbstripout)
+- [devcontainer](https://code.visualstudio.com/docs/devcontainers/containers)
 
 ## Future additions
 
-- github workflows
-- dependabot
-- renovate?
+- build + test github workflows
+- [dependency bot support](https://docs.astral.sh/uv/guides/integration/dependency-bots/) (renovate/dependabot)
 
 ## Requirements
 
