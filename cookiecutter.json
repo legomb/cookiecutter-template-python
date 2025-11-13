@@ -1,7 +1,4 @@
 {
     "new_directory_name": "my-python-project",
-    "project_name": "My Python Project",
-    "_copy_without_render": [
-        "taskfile.yml"
-    ]
+    "project_name": "My Python Project"
 }
